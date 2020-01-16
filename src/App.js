@@ -10,17 +10,34 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      task: data
+      taskList: data
     };
   }
+
+  completedTask = id => {
+    this.setState({
+      taskList: this.state.taskList.map(task => {
+        if (id === task.id) {
+          console.log("completed", task.completed);
+          return {
+            ...task,
+            completed: !task.completed
+          };
+        }
+        return task;
+      })
+    });
+  };
 
   render() {
     return (
       <div>
-        {console.log(this.state)}
         <h2>Welcome to your Todo App!</h2>
         <TodoForm />
-        <TodoList tasks={this.state.task} />
+        <TodoList
+          completedTask={this.completedTask}
+          tasks={this.state.taskList}
+        />
       </div>
     );
   }

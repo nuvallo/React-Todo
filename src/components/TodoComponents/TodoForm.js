@@ -1,6 +1,8 @@
 import React from "react";
 
 class TodoForm extends React.Component {
+  const;
+
   render() {
     return (
       <form className="todo-form">
