@@ -9,7 +9,6 @@ const TodoList = list => {
           <Todo key={todo.id} todo={todo} completedTask={list.completedTask} />
         );
       })}
-      <button>Clear Todo's</button>
     </div>
   );
 };
