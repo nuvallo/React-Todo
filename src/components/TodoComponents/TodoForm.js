@@ -37,25 +37,27 @@ class TodoForm extends React.Component {
     return (
       <Form className="todo-form">
         <FormGroup row>
-          <Label for="exampleEmail" sm={2}>
+          <Label for="todo-input" sm={2}>
             New Todo
           </Label>
-          <Col sm={5}>
+          <Col sm={7}>
             <Input
               name="todoValue"
               placeholder="New Todo"
               value={this.state.todoValue}
               onChange={this.changeHandler}
-              type="email"
-              name="email"
-              id="exampleEmail"
-              placeholder="with a placeholder"
+              type="text"
+              name="todo-input"
+              id="todo-input"
+              placeholder="Enter New Todo"
             />
           </Col>
         </FormGroup>
-        <FormGroup check row>
-          <Col sm={{ size: 10, offset: 2 }}>
-            <Button onClick={this.submitHandler}>Add</Button>
+        <FormGroup>
+          <Col sm={{ size: 10 }}>
+            <Button className="add" onClick={this.submitHandler}>
+              Add
+            </Button>
             <Button onClick={this.ClearHandler}>Clear Completed</Button>
           </Col>
         </FormGroup>
