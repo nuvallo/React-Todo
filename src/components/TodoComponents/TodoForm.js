@@ -1,4 +1,13 @@
 import React from "react";
+import {
+  Col,
+  Button,
+  Form,
+  FormGroup,
+  Label,
+  Input,
+  FormText
+} from "reactstrap";
 
 class TodoForm extends React.Component {
   constructor(props) {
@@ -26,17 +35,31 @@ class TodoForm extends React.Component {
 
   render() {
     return (
-      <form className="todo-form">
-        <input
-          type="text"
-          name="todoValue"
-          placeholder="New Todo"
-          value={this.state.todoValue}
-          onChange={this.changeHandler}
-        />{" "}
-        <button onClick={this.submitHandler}>Add</button>
-        <button onClick={this.ClearHandler}>Clear Completed</button>
-      </form>
+      <Form className="todo-form">
+        <FormGroup row>
+          <Label for="exampleEmail" sm={2}>
+            New Todo
+          </Label>
+          <Col sm={5}>
+            <Input
+              name="todoValue"
+              placeholder="New Todo"
+              value={this.state.todoValue}
+              onChange={this.changeHandler}
+              type="email"
+              name="email"
+              id="exampleEmail"
+              placeholder="with a placeholder"
+            />
+          </Col>
+        </FormGroup>
+        <FormGroup check row>
+          <Col sm={{ size: 10, offset: 2 }}>
+            <Button onClick={this.submitHandler}>Add</Button>
+            <Button onClick={this.ClearHandler}>Clear Completed</Button>
+          </Col>
+        </FormGroup>
+      </Form>
     );
   }
 }

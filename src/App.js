@@ -2,6 +2,8 @@ import React from "react";
 import TodoForm from "./components/TodoComponents/TodoForm";
 import data from "./data";
 import TodoList from "./components/TodoComponents/TodoList";
+import Navigation from "./components/Navigation";
+import "./App.css";
 
 const error = 0;
 
@@ -64,7 +66,8 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="app">
+        <Navigation />
         <h2>Welcome to your Todo App!</h2>
         <TodoForm addTask={this.addTask} clearTask={this.clearTask} />
         <TodoList
